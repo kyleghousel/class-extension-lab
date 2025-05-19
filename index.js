@@ -29,11 +29,10 @@ class Triangle extends Polygon {
   }
 
   validityCheck() {
-    if (this.countSides === 3 && this.sides[0] + this.sides[1] > this.sides[2] && this.sides[0] + this.sides[2] > this.sides[1] && this.sides[1] + this.sides[2] > this.sides[0]) {
-      return true
-    } else {
-      return false
-    }
+    return this.countSides === 3 &&
+           this.sides[0] + this.sides[1] > this.sides[2] &&
+           this.sides[0] + this.sides[2] > this.sides[1] &&
+           this.sides[1] + this.sides[2] > this.sides[0]
   }
 }
 
@@ -44,11 +43,9 @@ class Square extends Polygon {
   }
 
   validityCheck() {
-    if (this.sides[0] === this.sides[1] && this.sides[0] === this.sides[2] && this.sides[0] === this.sides[3]) {
-      return true
-    } else {
-      return false
-    }
+    return this.sides[0] === this.sides[1] &&
+           this.sides[0] === this.sides[2] &&
+           this.sides[0] === this.sides[3]
   }
 
   get area() {
@@ -56,7 +53,7 @@ class Square extends Polygon {
   }
 
   calcArea() {
-    if (this.isValid) { return this.sides[0]**2 }
+    return this.isValid ? this.sides[0]**2 : 'Not a square. Go back to class, kid.'
   }
 
 }
