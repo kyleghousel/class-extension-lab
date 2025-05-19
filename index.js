@@ -43,7 +43,8 @@ class Square extends Polygon {
   }
 
   validityCheck() {
-    return this.sides[0] === this.sides[1] &&
+    return this.countSides === 4 &&
+           this.sides[0] === this.sides[1] &&
            this.sides[0] === this.sides[2] &&
            this.sides[0] === this.sides[3]
   }
